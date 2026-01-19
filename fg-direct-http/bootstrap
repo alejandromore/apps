@@ -1,0 +1,5 @@
+@echo off
+REM Bootstrap script for Huawei Cloud FunctionGraph on Windows
+REM Note: In production, Huawei Cloud uses Linux containers
+
+java -cp "*" com.example.HttpFunctionHandler

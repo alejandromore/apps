@@ -1,0 +1,5 @@
+# Para testing HTTP local con servidor (opcional)
+Flask==2.3.3
+
+# Para testing con requests (opcional)
+requests==2.31.0

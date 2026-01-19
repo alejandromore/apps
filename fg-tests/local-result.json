@@ -1,0 +1,17 @@
+{
+  "headers" : {
+    "Content-Type" : "application/json"
+  },
+  "body" : {
+    "bucket" : "obs-test-alejandro",
+    "fileName" : "sample.txt",
+    "simulated" : false,
+    "contentLength" : 22,
+    "message" : "Archivo leído exitosamente desde OBS",
+    "lines" : 1,
+    "content" : "Hello World Alejandro\n",
+    "status" : "SUCCESS",
+    "timestamp" : 1767996953024
+  },
+  "statusCode" : 200
+}

@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+}
+
+h1 {
+  color: #1a73e8;
+}
+
+.service {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}

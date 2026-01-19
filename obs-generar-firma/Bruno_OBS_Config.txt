@@ -1,0 +1,32 @@
+﻿==================================================
+CONFIGURACION PARA BRUNO - OBS Huawei Cloud
+==================================================
+
+URL: 
+https://obs-test-alejandro.obs.ap-southeast-1.myhuaweicloud.com/
+
+METODO:
+GET
+
+HEADERS (agregar uno por uno en Bruno):
+
+1. Host
+   Key: Host
+   Value: obs-test-alejandro.obs.ap-southeast-1.myhuaweicloud.com
+
+2. Date
+   Key: Date
+   Value: Fri, 09 Jan 2026 21:40:22 GMT
+
+3. Authorization
+   Key: Authorization
+   Value: OBS 8ENLOAE2QCECKCRKANEU:DCz5x7EFE9OgaNqRWFjA4NBx19U=
+
+==================================================
+INFORMACION TECNICA:
+- Bucket: obs-test-alejandro
+- Access Key: 8ENLOAE2QCECKCRKANEU
+- Fecha generada: Fri, 09 Jan 2026 21:40:22 GMT
+- Firma: DCz5x7EFE9OgaNqRWFjA4NBx19U=
+- String to sign: GET\\n\\n\\nFri, 09 Jan 2026 21:40:22 GMT\\n\\n/obs-test-alejandro/
+==================================================

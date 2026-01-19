@@ -1,0 +1,12 @@
+{
+    "queryStringParameters": {
+        "query01": "valor1"
+    },
+    "pathParameters": {
+        "id": "123"
+    },
+    "headers": {
+        "x-version": "1.0"
+    },
+    "body": "{\"nombres\": \"Miguel\", \"apellidos\": \"Timana\"}"
+}
