@@ -3,24 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prueba APIG Services</title>
+  <title>Monitor de Servicios</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Test APIG Services</h1>
+  <div class="container">
+    <header class="header">
+      <h1><i class="fas fa-server"></i> Monitor de Servicios</h1>
+      <p class="subtitle">Sistema de verificación de servicios en tiempo real</p>
+    </header>
 
-  <div class="service">
-    <h2>Servicio 1</h2>
-    <button onclick="callService1()">Probar</button>
-    <pre id="response1">Respuesta...</pre>
+    <div class="dashboard">
+      <div class="services-panel">
+        <h2><i class="fas fa-list"></i> Servicios Disponibles</h2>
+        <p class="description">Haz clic en cualquiera de los botones para verificar el estado del servicio</p>
+        
+        <div class="buttons-container">
+          <button id="healthCheckBtn" class="service-btn">
+            <i class="fas fa-heartbeat"></i>
+            <span>Health Check</span>
+          </button>
+          
+          <button id="dewInfoBtn" class="service-btn">
+            <i class="fas fa-cloud"></i>
+            <span>DEW Info</span>
+          </button>
+          
+          <button id="clientesBtn" class="service-btn">
+            <i class="fas fa-users"></i>
+            <span>Clientes API</span>
+          </button>
+        </div>
+        
+        <div class="actions">
+          <button id="checkAllBtn" class="action-btn primary">
+            <i class="fas fa-play-circle"></i> Verificar Todos los Servicios
+          </button>
+          <button id="clearBtn" class="action-btn secondary">
+            <i class="fas fa-broom"></i> Limpiar Resultados
+          </button>
+        </div>
+      </div>
+
+      <div class="results-panel">
+        <h2><i class="fas fa-chart-line"></i> Resultados</h2>
+        <p class="description">Los resultados de las verificaciones se mostrarán aquí</p>
+        
+        <div class="status-indicators">
+          <div class="status-item">
+            <span class="status-label">Health Check:</span>
+            <span id="healthStatus" class="status-badge unknown">No verificado</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">DEW Info:</span>
+            <span id="dewStatus" class="status-badge unknown">No verificado</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Clientes API:</span>
+            <span id="clientesStatus" class="status-badge unknown">No verificado</span>
+          </div>
+        </div>
+        
+        <div class="results-container">
+          <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Consultando servicio...</p>
+          </div>
+          
+          <div id="resultsContent">
+            <div class="empty-state">
+              <i class="fas fa-mouse-pointer"></i>
+              <h3>Selecciona un servicio para comenzar</h3>
+              <p>Haz clic en uno de los botones de la izquierda para verificar el estado de un servicio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Sistema de Monitoreo | Servicios: <span id="serviceCount">3</span> | <span id="timestamp">--/--/---- --:--:--</span></p>
+      <p class="endpoints">Endpoints: http://110.238.69.203:8080/healthCheck, http://110.238.69.203:8080/dew-info, http://110.238.69.203:8080/clientes</p>
+    </footer>
   </div>
 
-  <div class="service">
-    <h2>Servicio 2</h2>
-    <button onclick="callService2()">Probar</button>
-    <pre id="response2">Respuesta...</pre>
-  </div>
-
-  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,14 +1,8 @@
 FROM eclipse-temurin:17-jdk-focal
-ENV SPRING_PROFILES_ACTIVE=default \
-    JAVA_OPTS="" \
-    TZ=UTC
+ENV TZ=UTC-5
 WORKDIR /app
-COPY target/demo*.jar app.jar
+COPY target/app-basic-java-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 
-# Variables de entorno para Huawei Cloud
-ENV DEW_ENABLED=true
-ENV DEW_REGION=eu-west-0
-ENV DEW_SECRET_NAME=cliente-crud-db-secrets
-
 ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar app.jar"]
+
