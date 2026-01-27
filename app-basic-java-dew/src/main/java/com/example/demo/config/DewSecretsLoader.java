@@ -2,16 +2,13 @@ package com.example.demo.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.RequestTimeoutException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
 import com.huaweicloud.sdk.csms.v1.CsmsClient;
-import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
-import com.huaweicloud.sdk.csms.v1.model.Version;
 import com.huaweicloud.sdk.csms.v1.region.CsmsRegion;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -42,9 +39,6 @@ public class DewSecretsLoader {
 
     @Value("${huaweicloud.auth.project-id}")
     private String projectId;
-
-    @Value("${huaweicloud.auth.domain-id}")
-    private String domainId;
 
     // Variables estáticas
     private static String DB_URL;
