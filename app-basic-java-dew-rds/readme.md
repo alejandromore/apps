@@ -3,30 +3,35 @@ mvn clean package -DskipTests
 mvn spring-boot:run
 
 wsl --distribution docker-desktop
+wsl --list --verbose
+wsl --shutdown
+
+docker version
 docker image ls
+
 docker build -t app-basic-java:1.0 .
+docker build --provenance=false --sbom=false -t app-basic-java:1.0 .
 docker run -p 8080:8080 app-basic-java:1.0
 
+#login swr remoto
+docker login -u la-south-2@HST3WCLCQUZN69YR1Q7M -p 4a9d398241cd07ffc1c7d31359fa4cf0cdd98d279cde27d5cd8c7b5bd68d145f swr.la-south-2.myhuaweicloud.com
+#tag
+docker tag app-basic-java:1.0 swr.la-south-2.myhuaweicloud.com/cce-basic-app/app-basic-java:1.0
+#push
+docker push swr.la-south-2.myhuaweicloud.com/cce-basic-app/app-basic-java:1.0
 
-mkdir $HOME\.kube
-Copy-Item cce-test-local-kubeconfig.yaml $HOME\.kube\config
-kubectl config view
-kubectl get nodes
-kubectl get pods --all-namespaces
-kubectl get deployments
+mkdir -p ~/.kube
+ls ~/.kube
+cp cce-app-kubeconfig.yaml ~/.kube/config
+cat ~/.kube/config
 
 kubectl apply -f deployment.yaml
-kubectl get pods
 kubectl apply -f service.yaml
+
+kubectl get nodes
+kubectl get pods
 kubectl get svc
 
-# Login en SWR
-docker login -u la-south-2@HST3WPDWCCZQLLHYZ2KV -p 59cf40e42292cd7caa7dc79bbee6a9bed269e530392d3ec75b7203247ba1dd26 swr.la-south-2.myhuaweicloud.com
-# Subir la imagen a Huawei SWR (Software Repository for Containers)
-docker tag app-basic-java:1.0 la-south-2.swr.myhuaweicloud.com/cce-jenkins-integration-organization/app-basic-java:1.0
-docker push la-south-2.swr.myhuaweicloud.com/cce-jenkins-integration-organization/app-basic-java:1.0
-
-3️⃣ Configurar kubectl para tu cluster CCE
-hcloud cce cluster kubeconfig --cluster-id <CCE_CLUSTER_ID> --file ./kubeconfig
-export KUBECONFIG=./kubeconfig
-kubectl get nodes
+kubectl describe pod app-basic-java-xxxx
+kubectl logs app-basic-java-xxxx
+kubectl describe pod app-basic-java-668dd6d96d-wflqz

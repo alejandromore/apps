@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mi-app-service
+  name: app-basic-java
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
-    app: mi-app
+    app: app-basic-java
   ports:
-    - port: 80        # Puerto público
-      targetPort: 8080 # Puerto interno del container
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
