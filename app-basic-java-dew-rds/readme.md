@@ -14,15 +14,15 @@ docker image ls
 docker build -t app-basic-java:1.0 .
 docker run -p 8081:8081 app-basic-java:1.0
 # construccion de imagen remota
-docker build --provenance=false --sbom=false -t app-basic-java:1.0 .
-docker run -p 8080:8080 app-basic-java:1.0
+docker build --provenance=false --sbom=false -t app-basic-java:2.0 .
+docker run -p 8081:8081 app-basic-java:2.0
 
 # login remoto
-docker login -u la-south-2@HST3WCLCQUZN69YR1Q7M -p 4a9d398241cd07ffc1c7d31359fa4cf0cdd98d279cde27d5cd8c7b5bd68d145f swr.la-south-2.myhuaweicloud.com
+docker login -u la-south-2@HST3WB4ZJN98S413NXHY -p c3f73e83ea643ecbc0d6a0f758adaae3928b669fe59122f9f22adfddc0d0297a swr.la-south-2.myhuaweicloud.com
 # tag
-docker tag app-basic-java:1.0 swr.la-south-2.myhuaweicloud.com/cce-basic-app/app-basic-java:1.0
+docker tag app-basic-java:2.0 swr.la-south-2.myhuaweicloud.com/cce-basic-app/app-basic-java:2.0
 # push
-docker push swr.la-south-2.myhuaweicloud.com/cce-basic-app/app-basic-java:1.0
+docker push swr.la-south-2.myhuaweicloud.com/cce-basic-app/app-basic-java:2.0
 
 
 
