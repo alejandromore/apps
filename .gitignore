@@ -47,3 +47,6 @@ vendor/
 .idea/
 *.swp
 *.swo
+
+# Java Class
+*.class
