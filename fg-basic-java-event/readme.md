@@ -32,3 +32,10 @@ Invoke-RestMethod -Uri "https://3606a742f89644148f83092cf970121d.apic.la-south-2
     } `
     -Body (Get-Content huawei_request.json -Raw)
 
+
+mvn install:install-file `
+  -Dfile=libs/RunTime-2.0.5.jar `
+  -DgroupId=com.huawei `
+  -DartifactId=runtime `
+  -Dversion=2.0.5 `
+  -Dpackaging=jar
