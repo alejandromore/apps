@@ -1,11 +1,11 @@
 import json
 
+# PARA HUAWEI FUNCTIONGRAPH
 def handler(event, context):
     print("=== DEBUG EVENT ===")
-    print(event)  # aquí verás exactamente qué recibe tu función
+    print(event)
     print("===================")
 
-    # Si event viene como string JSON, parsearlo
     if isinstance(event, str):
         event = json.loads(event)
 

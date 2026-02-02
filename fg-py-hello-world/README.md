@@ -1,15 +1,24 @@
 # Huawei FunctionGraph - Hello World (Python)
 
-# Ejecutar localmente
+# Preparar ambiente
+python -m venv venv
 venv\Scripts\activate
-uvicorn local_app:app --reload --port 8000
+pip install fastapi uvicorn requests
+pip install huaweicloudsdkfunctiongraph huaweicloudsdkcore
 
-# Test unitario
-pytest
 
-## Requisitos
-- Python 3.9
-- virtualenv
+# Ejecutar localmente 
+uvicorn app_local:local_handler --reload --port 8000
+
+# Prueba Codigo local golpeando al servicio que escucha
+python .\test_local.py
+python .\test_remote.py
+
+
+
+
+## Empaquetar artefacto para rubirlo
+.\package.ps1
 
 ## Setup
 python -m venv venv
@@ -17,23 +26,12 @@ venv\Scripts\activate
 pip install -r requirements.txt
 pip install huaweicloudsdkfunctiongraph huaweicloudsdkcore
 
-## Ejecutar local
-uvicorn local_app:app --reload
-uvicorn local_server:app --reload --port 8000
+
 
 python test_handler_remote.py
 
 ## Test
 pytest
-
-## Empaquetar
-.\package.ps1
-
-## Deploy
-- Runtime: Python 3.9
-- Handler: handler.handler
-- Subir function.zip
-- Crear HTTP Trigger (GET)
 
 {
     "queryString": {
