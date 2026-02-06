@@ -28,7 +28,7 @@ pip install huaweicloudsdkfunctiongraph huaweicloudsdkcore
 
 
 
-python test_handler_remote.py
+python test_remotev2.py
 
 ## Test
 pytest
