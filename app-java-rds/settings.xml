@@ -1,0 +1,13 @@
+<settings>
+
+  <servers>
+
+    <server>
+      <id>maven-alejandro</id>
+      <username>admin</username>
+      <password>ingE2004#</password>
+    </server>
+
+  </servers>
+
+</settings>
